@@ -13,6 +13,9 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        hachi: ['"Hachi Maru Pop"', 'cursive'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -46,6 +49,14 @@ export default {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        verdict: {
+          true: "hsl(var(--verdict-true))",
+          "true-foreground": "hsl(var(--verdict-true-foreground))",
+          false: "hsl(var(--verdict-false))",
+          "false-foreground": "hsl(var(--verdict-false-foreground))",
+          ambiguous: "hsl(var(--verdict-ambiguous))",
+          "ambiguous-foreground": "hsl(var(--verdict-ambiguous-foreground))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
