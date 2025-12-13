@@ -33,7 +33,7 @@ export const useFactCheck = ({ webhookUrl }: UseFactCheckOptions) => {
     if (!statement.trim() || !webhookUrl) return;
 
     // Add user message
-    addMessage({
+    const userMessage = addMessage({
       type: 'user',
       content: statement,
     });
@@ -41,6 +41,14 @@ export const useFactCheck = ({ webhookUrl }: UseFactCheckOptions) => {
     setIsLoading(true);
 
     try {
+      // Build chat history including the new message
+      const chatHistory = [...messages, userMessage].map(msg => ({
+        role: msg.type,
+        content: msg.content,
+        verdict: msg.verdict,
+        timestamp: msg.timestamp.toISOString(),
+      }));
+
       const response = await fetch(webhookUrl, {
         method: 'POST',
         headers: {
@@ -49,6 +57,7 @@ export const useFactCheck = ({ webhookUrl }: UseFactCheckOptions) => {
         body: JSON.stringify({
           type: 'text',
           statement: statement.trim(),
+          chatHistory,
         }),
       });
 
