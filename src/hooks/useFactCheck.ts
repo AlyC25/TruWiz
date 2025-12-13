@@ -57,7 +57,7 @@ export const useFactCheck = ({ webhookUrl }: UseFactCheckOptions) => {
         body: JSON.stringify({
           type: 'text',
           statement: statement.trim(),
-          chatHistory,
+          // chatHistory,
         }),
       });
 

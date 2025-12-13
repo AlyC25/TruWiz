@@ -7,20 +7,20 @@ interface ChatMessageProps {
 }
 
 const VerdictBadge = ({ verdict }: { verdict: Verdict }) => {
-  if (!verdict) return null;
+  // if (!verdict) return null;
 
   const config = {
-    true: {
+    "True": {
       icon: CheckCircle,
       label: 'TRUE',
       className: 'bg-verdict-true text-verdict-true-foreground',
     },
-    false: {
+    "False": {
       icon: XCircle,
       label: 'FALSE',
       className: 'bg-verdict-false text-verdict-false-foreground',
     },
-    ambiguous: {
+    "Ambiguous": {
       icon: HelpCircle,
       label: 'AMBIGUOUS',
       className: 'bg-verdict-ambiguous text-verdict-ambiguous-foreground',
