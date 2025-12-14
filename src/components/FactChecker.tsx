@@ -14,16 +14,14 @@ export const FactChecker = () => {
 
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  const { messages, isLoading, checkStatement, clearMessages } = useFactCheck({
+  const { messages, isLoading, checkStatement, clearMessages, handleVoiceResponse } = useFactCheck({
     webhookUrl,
   });
 
   const { isRecording, isProcessing, toggleRecording } = useVoiceRecording({
     webhookUrl,
-    onTranscription: (text) => {
-      if (text) {
-        checkStatement(text);
-      }
+    onTranscription: (data) => {
+      handleVoiceResponse(data);
     },
   });
 

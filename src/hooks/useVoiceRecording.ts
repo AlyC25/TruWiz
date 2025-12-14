@@ -1,7 +1,13 @@
 import { useState, useRef, useCallback } from 'react';
 
+interface VoiceResponse {
+  transcription?: string;
+  verdict?: string;
+  explanation?: string;
+}
+
 interface UseVoiceRecordingOptions {
-  onTranscription?: (text: string) => void;
+  onTranscription?: (data: VoiceResponse) => void;
   webhookUrl?: string;
 }
 
@@ -28,13 +34,13 @@ export const useVoiceRecording = ({ onTranscription, webhookUrl }: UseVoiceRecor
 
       mediaRecorder.onstop = async () => {
         stream.getTracks().forEach(track => track.stop());
-        
+
         if (chunksRef.current.length > 0 && webhookUrl) {
           setIsProcessing(true);
           try {
             const audioBlob = new Blob(chunksRef.current, { type: 'audio/webm' });
             const base64Audio = await blobToBase64(audioBlob);
-            
+
             const response = await fetch(webhookUrl, {
               method: 'POST',
               headers: {
@@ -50,7 +56,7 @@ export const useVoiceRecording = ({ onTranscription, webhookUrl }: UseVoiceRecor
             if (response.ok) {
               const data = await response.json();
               if (data.transcription && onTranscription) {
-                onTranscription(data.transcription);
+                onTranscription(data);
               }
             }
           } catch (error) {

@@ -57,7 +57,7 @@ export const useFactCheck = ({ webhookUrl }: UseFactCheckOptions) => {
         body: JSON.stringify({
           type: 'text',
           statement: statement.trim(),
-          // chatHistory,
+          chatHistory,
         }),
       });
 
@@ -66,7 +66,7 @@ export const useFactCheck = ({ webhookUrl }: UseFactCheckOptions) => {
       }
 
       const data = await response.json();
-      
+
       // Add assistant response
       addMessage({
         type: 'assistant',
@@ -84,11 +84,35 @@ export const useFactCheck = ({ webhookUrl }: UseFactCheckOptions) => {
     } finally {
       setIsLoading(false);
     }
-  }, [webhookUrl, addMessage]);
+  }, [webhookUrl, addMessage, messages]);
 
   const clearMessages = useCallback(() => {
     setMessages([]);
   }, []);
+
+  const handleVoiceResponse = useCallback((data: {
+    transcription?: string;
+    verdict?: string;
+    explanation?: string;
+  }) => {
+    // Add user message with transcription
+    if (data.transcription) {
+      addMessage({
+        type: 'user',
+        content: data.transcription,
+      });
+    }
+
+    // Add assistant response
+    if (data.explanation || data.verdict) {
+      addMessage({
+        type: 'assistant',
+        content: data.explanation || 'Analysis complete.',
+        verdict: data.verdict as Verdict,
+        explanation: data.explanation,
+      });
+    }
+  }, [addMessage]);
 
   return {
     messages,
@@ -96,5 +120,6 @@ export const useFactCheck = ({ webhookUrl }: UseFactCheckOptions) => {
     checkStatement,
     clearMessages,
     addMessage,
+    handleVoiceResponse,
   };
 };
