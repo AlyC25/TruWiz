@@ -42,12 +42,12 @@ export const useFactCheck = ({ webhookUrl }: UseFactCheckOptions) => {
 
     try {
       // Build chat history including the new message
-      const chatHistory = [...messages, userMessage].map(msg => ({
-        role: msg.type,
-        content: msg.content,
-        verdict: msg.verdict,
-        timestamp: msg.timestamp.toISOString(),
-      }));
+      // const chatHistory = [...messages, userMessage].map(msg => ({
+      //   role: msg.type,
+      //   content: msg.content,
+      //   verdict: msg.verdict,
+      //   timestamp: msg.timestamp.toISOString(),
+      // }));
 
       const response = await fetch(webhookUrl, {
         method: 'POST',
@@ -57,7 +57,7 @@ export const useFactCheck = ({ webhookUrl }: UseFactCheckOptions) => {
         body: JSON.stringify({
           type: 'text',
           statement: statement.trim(),
-          chatHistory,
+          // chatHistory,
         }),
       });
 
