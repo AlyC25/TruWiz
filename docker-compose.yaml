@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  # 1. N8N Backend Service
+  n8n:
+    image: n8nio/n8n:latest
+    container_name: n8n_backend
+    # Maps Host port 5679 to Container port 5678 (n8n's default)
+    ports:
+      - "5679:5678" 
+    environment:
+      # Use the service name for communication within the network
+      N8N_HOST: n8n 
+    volumes:
+      # Optional: Persist user data/workflows 
+      - n8n_data:/home/node/.n8n
+    networks:
+      - app_network
+
+  # 2. Vite Frontend Service
+  frontend:
+    # Build using the Dockerfile we defined above
+    build: . 
+    container_name: vite_frontend
+    # Maps Host port 8080 to Container port 80 (Nginx default)
+    ports:
+      - "8080:80" 
+    networks:
+      - app_network
+      
+volumes:
+  n8n_data:
+    driver: local
+
+networks:
+  app_network:
+    driver: bridge
