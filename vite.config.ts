@@ -5,8 +5,8 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-base: "/TruWiz",  
-server: {
+  base: "/TruWiz/",
+  server: {
     host: "::",
     port: 8080,
   },
