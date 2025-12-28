@@ -4,7 +4,7 @@ import { useVoiceRecording } from '@/hooks/useVoiceRecording';
 import { ChatMessage } from './ChatMessage';
 import { ChatInput } from './ChatInput';
 import { WebhookSettings } from './WebhookSettings';
-import { Sparkles, Trash2 } from 'lucide-react';
+import { Sparkles, Trash2, Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export const FactChecker = () => {
@@ -43,8 +43,10 @@ export const FactChecker = () => {
       {/* Header */}
       <header className="flex items-center justify-between px-4 py-3 bg-card border-b border-border">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
-            <Sparkles className="w-5 h-5 text-primary" />
+          <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center relative">
+            <Search className="w-6 h-6 text-primary" />
+            <Sparkles className="w-2.5 h-2.5 text-primary absolute -top-0.5 -right-0.5" />
+            <Sparkles className="w-2 h-2 text-primary absolute -bottom-0.5 -left-0.5" />
           </div>
           <div>
             <h1 className="font-hachi text-lg font-medium">Fact Checker</h1>
@@ -78,8 +80,10 @@ export const FactChecker = () => {
       >
         {messages.length === 0 ? (
           <div className="flex flex-col items-center justify-center h-full text-center px-8">
-            <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mb-4">
-              <Sparkles className="w-10 h-10 text-primary" />
+            <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mb-4 relative">
+              <Search className="w-10 h-10 text-primary" />
+              <Sparkles className="w-4 h-4 text-primary absolute -top-1 -right-1" />
+              <Sparkles className="w-3 h-3 text-primary absolute -bottom-1 -left-1" />
             </div>
             <h2 className="text-xl font-hachi mb-2">Welcome!</h2>
             <p className="text-muted-foreground font-hachi text-sm max-w-sm">
