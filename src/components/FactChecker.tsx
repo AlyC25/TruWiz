@@ -45,9 +45,9 @@ export const FactChecker = () => {
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center relative">
             <Search className="w-8 h-8 text-primary" />
-            <Sparkles className="w-4.5 h-4.5 text-primary absolute -top-1.5 -right-1.5" />
-            <Sparkles className="w-4 h-4 text-primary absolute -bottom-1.5 -left-1.5" />
-            <Sparkles className="w-3.5 h-3.5 text-primary absolute top-0 -left-2" />
+            <Sparkles className="w-3 h-3 text-primary absolute -top-1 -right-1" />
+            <Sparkles className="w-2.5 h-2.5 text-primary absolute -bottom-1 -left-1" />
+            <Sparkles className="w-2 h-2 text-primary absolute top-0 -left-1.5" />
           </div>
           <div>
             <h1 className="font-hachi text-lg font-medium">Fact Checker</h1>
