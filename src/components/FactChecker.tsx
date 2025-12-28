@@ -44,7 +44,7 @@ export const FactChecker = () => {
       <header className="flex items-center justify-between px-4 py-3 bg-card border-b border-border">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center relative">
-            <Search className="w-6 h-6 text-primary" />
+            <Search className="w-8 h-8 text-primary" />
             <Sparkles className="w-4.5 h-4.5 text-primary absolute -top-1.5 -right-1.5" />
             <Sparkles className="w-4 h-4 text-primary absolute -bottom-1.5 -left-1.5" />
             <Sparkles className="w-3.5 h-3.5 text-primary absolute top-0 -left-2" />
@@ -82,7 +82,7 @@ export const FactChecker = () => {
         {messages.length === 0 ? (
           <div className="flex flex-col items-center justify-center h-full text-center px-8">
             <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mb-4 relative">
-              <Search className="w-10 h-10 text-primary" />
+              <Search className="w-14 h-14 text-primary" />
               <Sparkles className="w-7 h-7 text-primary absolute -top-2 -right-2" />
               <Sparkles className="w-6 h-6 text-primary absolute -bottom-2 -left-2" />
               <Sparkles className="w-5 h-5 text-primary absolute top-0 -left-3" />
