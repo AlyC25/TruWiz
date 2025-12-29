@@ -10,104 +10,104 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Soft, creamy light color palette */
-    --background: 45 30% 96%;
-    --foreground: 30 20% 25%;
+    /* Light blue/lavender palette matching reference */
+    --background: 220 40% 92%;
+    --foreground: 220 30% 35%;
 
-    --card: 45 25% 98%;
-    --card-foreground: 30 20% 25%;
+    --card: 220 30% 96%;
+    --card-foreground: 220 30% 35%;
 
-    --popover: 45 25% 98%;
-    --popover-foreground: 30 20% 25%;
+    --popover: 220 30% 96%;
+    --popover-foreground: 220 30% 35%;
 
-    /* Warm coral/peach primary */
-    --primary: 15 70% 65%;
-    --primary-foreground: 45 30% 98%;
+    /* Soft blue primary */
+    --primary: 210 50% 55%;
+    --primary-foreground: 220 30% 98%;
 
-    /* Soft mint secondary */
-    --secondary: 160 35% 88%;
-    --secondary-foreground: 160 30% 30%;
+    /* Soft teal/mint secondary */
+    --secondary: 170 45% 65%;
+    --secondary-foreground: 170 40% 20%;
 
-    /* Creamy muted tones */
-    --muted: 45 20% 92%;
-    --muted-foreground: 30 15% 50%;
+    /* Light muted tones */
+    --muted: 220 25% 88%;
+    --muted-foreground: 220 20% 50%;
 
     /* Lavender accent */
-    --accent: 280 40% 88%;
-    --accent-foreground: 280 30% 30%;
+    --accent: 250 35% 85%;
+    --accent-foreground: 250 30% 30%;
 
     /* Soft red for destructive */
-    --destructive: 0 60% 70%;
-    --destructive-foreground: 45 30% 98%;
+    --destructive: 0 55% 65%;
+    --destructive-foreground: 0 30% 98%;
 
-    /* Verdict colors */
-    --verdict-true: 145 50% 70%;
-    --verdict-true-foreground: 145 40% 25%;
-    --verdict-false: 0 55% 72%;
-    --verdict-false-foreground: 0 45% 25%;
-    --verdict-ambiguous: 45 70% 70%;
-    --verdict-ambiguous-foreground: 45 50% 25%;
+    /* Verdict colors - matching reference */
+    --verdict-true: 150 45% 85%;
+    --verdict-true-foreground: 150 40% 30%;
+    --verdict-false: 0 50% 88%;
+    --verdict-false-foreground: 0 45% 40%;
+    --verdict-ambiguous: 200 45% 88%;
+    --verdict-ambiguous-foreground: 200 40% 40%;
 
-    --border: 30 20% 88%;
-    --input: 30 20% 88%;
-    --ring: 15 70% 65%;
+    --border: 220 25% 85%;
+    --input: 220 30% 94%;
+    --ring: 210 50% 55%;
 
     --radius: 1rem;
 
-    --sidebar-background: 45 25% 97%;
-    --sidebar-foreground: 30 20% 30%;
-    --sidebar-primary: 15 70% 65%;
-    --sidebar-primary-foreground: 45 30% 98%;
-    --sidebar-accent: 160 35% 90%;
-    --sidebar-accent-foreground: 160 30% 30%;
-    --sidebar-border: 30 20% 88%;
-    --sidebar-ring: 15 70% 65%;
+    --sidebar-background: 220 30% 95%;
+    --sidebar-foreground: 220 30% 35%;
+    --sidebar-primary: 210 50% 55%;
+    --sidebar-primary-foreground: 220 30% 98%;
+    --sidebar-accent: 170 40% 90%;
+    --sidebar-accent-foreground: 170 30% 30%;
+    --sidebar-border: 220 25% 85%;
+    --sidebar-ring: 210 50% 55%;
   }
 
   .dark {
-    --background: 30 15% 12%;
-    --foreground: 45 20% 92%;
+    --background: 220 20% 12%;
+    --foreground: 220 20% 92%;
 
-    --card: 30 15% 15%;
-    --card-foreground: 45 20% 92%;
+    --card: 220 20% 16%;
+    --card-foreground: 220 20% 92%;
 
-    --popover: 30 15% 15%;
-    --popover-foreground: 45 20% 92%;
+    --popover: 220 20% 16%;
+    --popover-foreground: 220 20% 92%;
 
-    --primary: 15 65% 55%;
-    --primary-foreground: 30 15% 10%;
+    --primary: 210 45% 50%;
+    --primary-foreground: 220 20% 10%;
 
-    --secondary: 160 25% 25%;
-    --secondary-foreground: 160 30% 85%;
+    --secondary: 170 35% 30%;
+    --secondary-foreground: 170 30% 85%;
 
-    --muted: 30 15% 20%;
-    --muted-foreground: 30 15% 60%;
+    --muted: 220 15% 22%;
+    --muted-foreground: 220 15% 60%;
 
-    --accent: 280 30% 30%;
-    --accent-foreground: 280 40% 85%;
+    --accent: 250 25% 30%;
+    --accent-foreground: 250 35% 85%;
 
-    --destructive: 0 50% 45%;
-    --destructive-foreground: 45 20% 92%;
+    --destructive: 0 45% 45%;
+    --destructive-foreground: 220 20% 92%;
 
-    --verdict-true: 145 40% 40%;
-    --verdict-true-foreground: 145 30% 90%;
-    --verdict-false: 0 45% 45%;
+    --verdict-true: 150 35% 30%;
+    --verdict-true-foreground: 150 30% 90%;
+    --verdict-false: 0 40% 35%;
     --verdict-false-foreground: 0 35% 90%;
-    --verdict-ambiguous: 45 55% 45%;
-    --verdict-ambiguous-foreground: 45 40% 90%;
+    --verdict-ambiguous: 200 35% 35%;
+    --verdict-ambiguous-foreground: 200 30% 90%;
 
-    --border: 30 15% 25%;
-    --input: 30 15% 25%;
-    --ring: 15 65% 55%;
+    --border: 220 15% 25%;
+    --input: 220 15% 25%;
+    --ring: 210 45% 50%;
 
-    --sidebar-background: 30 15% 10%;
-    --sidebar-foreground: 45 20% 90%;
-    --sidebar-primary: 15 65% 55%;
-    --sidebar-primary-foreground: 30 15% 10%;
-    --sidebar-accent: 160 25% 20%;
-    --sidebar-accent-foreground: 160 30% 85%;
-    --sidebar-border: 30 15% 25%;
-    --sidebar-ring: 15 65% 55%;
+    --sidebar-background: 220 20% 10%;
+    --sidebar-foreground: 220 20% 90%;
+    --sidebar-primary: 210 45% 50%;
+    --sidebar-primary-foreground: 220 20% 10%;
+    --sidebar-accent: 170 25% 22%;
+    --sidebar-accent-foreground: 170 30% 85%;
+    --sidebar-border: 220 15% 25%;
+    --sidebar-ring: 210 45% 50%;
   }
 }
 
@@ -154,4 +154,33 @@ All colors MUST be HSL.
 
 .recording-pulse {
   animation: recording-pulse 1.5s ease-in-out infinite;
+}
+
+/* Sparkle twinkle animation */
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.sparkle {
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+/* Glassmorphism effect */
+.glass {
+  background: hsl(var(--card) / 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid hsl(var(--border) / 0.5);
+}
+
+.glass-strong {
+  background: hsl(var(--card) / 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid hsl(var(--border) / 0.6);
 }
