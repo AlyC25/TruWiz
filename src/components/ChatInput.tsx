@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Textarea } from '@/components/ui/textarea';
-import { Send, Mic, Square, Loader2 } from 'lucide-react';
+import { Check, Mic, Square, Loader2, Search } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface ChatInputProps {
@@ -38,23 +37,38 @@ export const ChatInput = ({
   };
 
   return (
-    <div className="flex items-end gap-2 p-4 bg-card border-t border-border">
-      <div className="flex-1 relative">
-        <Textarea
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyDown={handleKeyDown}
-          placeholder="Type a statement to fact-check..."
-          className="min-h-[52px] max-h-32 resize-none pr-12 font-hachi rounded-xl bg-background border-border"
-          disabled={isLoading || disabled}
-        />
-      </div>
+    <div className="glass-strong rounded-full flex items-center gap-2 px-4 py-2 shadow-lg">
+      <Search className="w-5 h-5 text-muted-foreground shrink-0" />
+      
+      <input
+        type="text"
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+        onKeyDown={handleKeyDown}
+        placeholder="Type a statement to fact-check..."
+        className="flex-1 bg-transparent border-none outline-none font-hachi text-sm text-foreground placeholder:text-muted-foreground py-2"
+        disabled={isLoading || disabled}
+      />
 
       <Button
         size="icon"
-        variant={isRecording ? 'destructive' : 'secondary'}
+        className="h-10 w-10 rounded-full shrink-0 bg-secondary hover:bg-secondary/80"
+        onClick={handleSubmit}
+        disabled={!input.trim() || isLoading || disabled}
+      >
+        {isLoading ? (
+          <Loader2 className="w-5 h-5 animate-spin text-secondary-foreground" />
+        ) : (
+          <Check className="w-5 h-5 text-secondary-foreground" />
+        )}
+      </Button>
+
+      <Button
+        size="icon"
+        variant={isRecording ? 'destructive' : 'ghost'}
         className={cn(
-          'h-[52px] w-[52px] rounded-xl shrink-0',
+          'h-10 w-10 rounded-full shrink-0',
+          !isRecording && 'bg-muted hover:bg-muted/80',
           isRecording && 'recording-pulse'
         )}
         onClick={onToggleRecording}
@@ -65,20 +79,7 @@ export const ChatInput = ({
         ) : isRecording ? (
           <Square className="w-5 h-5" />
         ) : (
-          <Mic className="w-5 h-5" />
-        )}
-      </Button>
-
-      <Button
-        size="icon"
-        className="h-[52px] w-[52px] rounded-xl shrink-0"
-        onClick={handleSubmit}
-        disabled={!input.trim() || isLoading || disabled}
-      >
-        {isLoading ? (
-          <Loader2 className="w-5 h-5 animate-spin" />
-        ) : (
-          <Send className="w-5 h-5" />
+          <Mic className="w-5 h-5 text-muted-foreground" />
         )}
       </Button>
     </div>
