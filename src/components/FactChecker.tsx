@@ -6,7 +6,7 @@ import { ChatInput } from './ChatInput';
 import { WebhookSettings } from './WebhookSettings';
 import { SparkleBackground } from './SparkleBackground';
 import { ExamplePrompts } from './ExamplePrompts';
-import { Trash2, Search } from 'lucide-react';
+import { Trash2, Search, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export const FactChecker = () => {
@@ -80,8 +80,11 @@ export const FactChecker = () => {
           {messages.length === 0 ? (
             <div className="flex-1 flex flex-col items-center justify-center text-center px-4 py-8">
               {/* Main Logo */}
-              <div className="w-28 h-28 rounded-3xl glass-strong flex items-center justify-center mb-6 shadow-lg">
+              <div className="relative w-28 h-28 rounded-3xl glass-strong flex items-center justify-center mb-6 shadow-lg">
                 <Search className="w-16 h-16 text-primary/70" />
+                <Sparkles className="w-5 h-5 text-primary/60 absolute -top-2 -right-2" />
+                <Sparkles className="w-4 h-4 text-primary/50 absolute -bottom-2 -left-2" />
+                <Sparkles className="w-3.5 h-3.5 text-primary/40 absolute top-1 -left-3" />
               </div>
               
               <h2 className="text-2xl md:text-3xl font-hachi mb-3 text-foreground">Welcome!</h2>
